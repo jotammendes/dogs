@@ -58,7 +58,7 @@ export function PHOTO_POST(formData, token) {
             headers: {
                 Authorization: 'Bearer ' + token,
             },
+            body: formData,
         },
-        body: formData,
     };
 }
