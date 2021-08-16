@@ -4,11 +4,13 @@ import PhotoComments from './PhotoComments';
 import styles from './PhotoContent.module.css';
 
 const PhotoContent = ({ data }) => {
-    const { photo,comments } = data;
+    const { photo, comments } = data;
 
     return (
         <div className={ styles.photo }>
-            <div className={ styles.img }><img src={ photo.src } alt={ photo.title } /></div>
+            <div className={ styles.img }>
+                <img src={ photo.src } alt={ photo.title } />
+            </div>
             <div className={ styles.details }>
                 <div>
                     <p className={ styles.author }>
@@ -23,8 +25,8 @@ const PhotoContent = ({ data }) => {
                         <li>{ photo.idade } anos</li>
                     </ul>
                 </div>
-                <PhotoComments id={ photo.id } comments={ comments } />
             </div>
+            <PhotoComments id={ photo.id } comments={ comments } />
         </div>
     )
 }
