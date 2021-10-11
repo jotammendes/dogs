@@ -38,7 +38,7 @@ const Feed = ({ user }) => {
     return (
         <div>
             { modalPhoto && <FeedModal photo={ modalPhoto } setModalPhoto={ setModalPhoto } /> }
-            {pages.map((page) => <FeedPhotos page={page} user={user} setModalPhoto={ setModalPhoto } setInfinite={setInfinite} />)}
+            {pages.map((page) => <FeedPhotos key={page} page={page} user={user} setModalPhoto={ setModalPhoto } setInfinite={setInfinite} />)}
         </div>
     )
 }
@@ -47,7 +47,7 @@ Feed.defaultProps = {
     user: 0
 }
 
-Feed.PropTypes = {
+Feed.propTypes = {
     user: PropTypes.oneOfType([
         PropTypes.string.isRequired,
         PropTypes.number.isRequired
